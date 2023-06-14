@@ -1,7 +1,8 @@
 const mongoose = require ('mongoose');
-const mongoURI = "mongodb+srv://patramanas098:$1m1Padhan@cluster0.9mr9ya0.mongodb.net/localservice?retryWrites=true&w=majority"
+
+const mongoURI = process.env.DATABASE
 const mongoDB = async ()=>{ 
-     await mongoose.connect(mongoURI,{useNewUrlParser:true},async(err,result)=>{
+     await mongoose.connect(mongoURI,{useUnifiedTopology:true,useNewUrlParser:true},async(err,result)=>{
           if (err) console.log("---",err)
      else {
           console.log("connected");

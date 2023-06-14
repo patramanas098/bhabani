@@ -2,12 +2,13 @@
 const express = require('express')
 const cors = require('cors');
 const app = express()
+require("dotenv").config();
 const port = 10000
 const mongoDB = require ("./db")
 mongoDB();
 app.use(cors());
 app.use((req,res,next)=>{
-  res.setHeader("Access-Control-Allow-Origin","https://mernapp-lcii.onrender.com");
+  res.setHeader("Access-Control-Allow-Origin",'*');
   res.header(
     "Access-Control-Allow-Headers",
      "Origin, x-Requested-with, Content-Type, Accept"
@@ -30,3 +31,6 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
+ 
+
+

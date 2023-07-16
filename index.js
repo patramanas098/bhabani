@@ -19,7 +19,7 @@ app.use((req,res,next)=>{
 
 app.use(express.json()) 
 app.use('/api',require ("./Routes/Displaydata"))
-app.use('/api',require ("./Routes/Creatuser"))
+app.use('/api',require ("./Routes/CreatUser"))
 app.use('/api',require ("./Routes/Registration"))
 app.use('/api',require ("./Routes/Displayuser"))
 app.use('/api',require ("./Routes/Location"))
